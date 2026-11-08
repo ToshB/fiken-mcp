@@ -1,4 +1,4 @@
-export const PUBLIC_ORIGIN = "https://fiken.mcp.wollums.no";
+export const PUBLIC_ORIGIN = "https://fiken-mcp.flipperselskapet.workers.dev";
 
 /** Canonical RFC 8707 resource, and the URL users add to their MCP client. */
 export const MCP_RESOURCE = `${PUBLIC_ORIGIN}/mcp`;

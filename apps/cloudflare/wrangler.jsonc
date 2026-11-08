@@ -5,10 +5,10 @@
   "compatibility_date": "2026-10-01",
   // global_fetch_strictly_public is required for Client ID Metadata Documents (SSRF protection).
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
-  "workers_dev": false,
+  // Own deployment on the account's workers.dev subdomain, no custom domain.
+  "workers_dev": true,
   "preview_urls": false,
-  "routes": [{ "pattern": "fiken.mcp.wollums.no", "custom_domain": true }],
-  "kv_namespaces": [{ "binding": "OAUTH_KV", "id": "2fa7dcca57764232a38d4e304bc3e745" }],
+  "kv_namespaces": [{ "binding": "OAUTH_KV", "id": "cc433831b51e46fa971a71ca6f37fb80" }],
   "durable_objects": {
     "bindings": [{ "name": "FIKEN_USER_QUEUE", "class_name": "FikenUserQueue" }]
   },

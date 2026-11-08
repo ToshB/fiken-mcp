@@ -1,4 +1,5 @@
 import type { FikenClient } from "./fiken/client.ts";
+import { SERVER_DISPLAY_NAME } from "./server-info.ts";
 
 /**
  * Receipts and vouchers the user uploads through a one-time link. The platform owns the link and
@@ -53,7 +54,7 @@ export async function uploadAttachment(fiken: FikenClient, target: UploadTarget,
 
   const fields: [string, string][] =
     target.type === "inbox"
-      ? [["name", file.name], ["filename", file.name], ["description", "Lastet opp via Fiken av Wollum AS"]]
+      ? [["name", file.name], ["filename", file.name], ["description", `Lastet opp via ${SERVER_DISPLAY_NAME}`]]
       : [["filename", file.name]];
   const { body, contentType } = multipart(fields, file);
   const companySlug = target.companySlug;

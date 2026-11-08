@@ -1,5 +1,5 @@
 import { AuthorizationError, authorizationErrorRedirect, CimdFetchError } from "@cloudflare/workers-oauth-provider";
-import type { AccessLevel } from "@fiken-mcp/core";
+import { SERVER_DISPLAY_NAME, type AccessLevel } from "@fiken-mcp/core";
 import { isAllowedClient } from "../config.ts";
 import { log } from "../log.ts";
 import { consentPage } from "../ui/consent.ts";
@@ -122,5 +122,5 @@ async function handleAuthErrors(run: () => Promise<Response>): Promise<Response>
 
 function clientNotAllowed(clientId: string): Response {
   log("client_not_allowed", { clientId: clientId.slice(0, 200) });
-  return messagePage(403, "Denne appen kan ikke kobles til", "Fiken av Wollum AS kan foreløpig bare brukes fra Claude og ChatGPT.");
+  return messagePage(403, "Denne appen kan ikke kobles til", `${SERVER_DISPLAY_NAME} kan foreløpig bare brukes fra Claude og ChatGPT.`);
 }
